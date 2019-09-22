@@ -43,6 +43,7 @@ namespace api.Controllers
         {
             Lista dbLista = new Lista();
             dbLista.DataCriacao = lista.DataCriacao;
+            dbLista.Prioridade = lista.Prioridade;
             dbLista.DataFinalizacao = lista.DataFinalizacao;
             dbLista.DataUltimaAtualizacao = lista.DataUltimaAtualizacao;
             dbLista.Descricao = lista.Descricao;

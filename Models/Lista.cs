@@ -1,4 +1,5 @@
 using System;
+using api.Enums;
 
 namespace api.Models
 {
@@ -6,6 +7,7 @@ namespace api.Models
     {
         public int ID { get; set; }
         public string Descricao { get; set; }
+        public PrioridadesLista Prioridade { get; set; }
         public DateTime DataCriacao { get; set; }
         public DateTime DataFinalizacao { get; set; }
         public DateTime DataUltimaAtualizacao { get; set; }
