@@ -56,5 +56,20 @@ namespace api.Controllers
 
             return CreatedAtRoute("GetLista", new {controller = "listas", id = dbLista.ID}, dbLista);
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            Lista lista = _context.Listas.Find(id);
+            if (lista == null)
+            {
+                return NotFound();
+            }
+
+            _context.Listas.Remove(lista);
+            _context.SaveChanges();
+            
+            return Ok();
+        }
     }
 }
