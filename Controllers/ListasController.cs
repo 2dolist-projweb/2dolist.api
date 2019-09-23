@@ -66,7 +66,9 @@ namespace api.Controllers
                 return NotFound();
             }
 
+            _context.Tarefas.RemoveRange(_context.Tarefas.Where(x => x.Lista.ID == id));
             _context.Listas.Remove(lista);
+            
             _context.SaveChanges();
 
             return Ok();
