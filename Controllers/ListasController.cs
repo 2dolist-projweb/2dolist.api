@@ -22,7 +22,7 @@ namespace api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Lista>> Get()
         {
-            IEnumerable<Lista> listas = _context.Listas.ToList();            
+            IEnumerable<Lista> listas = _context.Listas.ToList();
             return Ok(listas);
         }
 
@@ -68,7 +68,7 @@ namespace api.Controllers
 
             _context.Listas.Remove(lista);
             _context.SaveChanges();
-            
+
             return Ok();
         }
     }
