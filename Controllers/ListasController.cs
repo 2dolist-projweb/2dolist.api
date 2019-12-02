@@ -21,7 +21,6 @@ namespace api.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         public ActionResult<IEnumerable<Lista>> Get()
         {
             IEnumerable<Lista> listas = _context.Listas.ToList();
