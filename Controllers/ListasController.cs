@@ -27,6 +27,14 @@ namespace api.Controllers
             return Ok(listas);
         }
 
+        [HttpGet]
+        [Authorize]
+        public ActionResult<IEnumerable<Lista>> GetListaAuth()
+        {
+            IEnumerable<Lista> listas = _context.Listas.ToList();
+            return Ok(listas);
+        }        
+
         [HttpGet("{id}", Name = "GetLista")]
         public ActionResult<Lista> Get(int id)
         {
