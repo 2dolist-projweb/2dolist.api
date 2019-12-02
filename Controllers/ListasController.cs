@@ -27,8 +27,9 @@ namespace api.Controllers
             return Ok(listas);
         }
 
-        [HttpGet]
+        [Route("AuthListas")]
         [Authorize]
+        [HttpGet]
         public ActionResult<IEnumerable<Lista>> GetListaAuth()
         {
             IEnumerable<Lista> listas = _context.Listas.ToList();
