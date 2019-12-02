@@ -3,6 +3,7 @@ using System.Linq;
 using api.DBContext;
 using api.Dtos;
 using api.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
@@ -15,11 +16,12 @@ namespace api.Controllers
         private readonly AppDBContext _context;
 
         public ListasController(AppDBContext context)
-        {
+        {   
             _context = context;
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult<IEnumerable<Lista>> Get()
         {
             IEnumerable<Lista> listas = _context.Listas.ToList();
