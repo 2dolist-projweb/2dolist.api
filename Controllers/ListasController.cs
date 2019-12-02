@@ -42,6 +42,7 @@ namespace api.Controllers
             Lista lista = _context.Listas.Find(id);
             if (lista != null)
             {
+                lista.Descricao = lista.Descricao.ToUpper();
                 return Ok(lista);
             }
 
